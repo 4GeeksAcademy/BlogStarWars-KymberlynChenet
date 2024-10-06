@@ -2,36 +2,38 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-//create your first component
-const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-	const basename = process.env.BASENAME || "";
+import GetPeople from "./views/getPeople";
+import GetPlanets from "./views/getPlanets";
+import GetVehicles from "./views/getVehicles";
+import Details from "./views/getDetails";
 
-	return (
-		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
-	);
+const Layout = () => {
+    const basename = process.env.BASENAME || "";
+
+    return (
+        <div>
+            <BrowserRouter basename={basename}>
+                <ScrollToTop>
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<GetPeople />} />
+                        <Route path="/people" element={<GetPeople />} />
+                        <Route path="/planets" element={<GetPlanets />} />
+                        <Route path="/vehicles" element={<GetVehicles />} />
+                        <Route path="/details/:type/:id" element={<Details />} /> {/* Aquí gestionamos los detalles */}
+                        <Route path="*" element={<h1>Not found!</h1>} />
+                    </Routes>
+
+                    <Footer />
+                </ScrollToTop>
+            </BrowserRouter>
+        </div>
+    );
 };
 
 export default injectContext(Layout);
