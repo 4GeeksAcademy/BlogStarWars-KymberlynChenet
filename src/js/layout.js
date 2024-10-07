@@ -6,6 +6,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Demo } from "./views/demo";
 
 import GetPeople from "./views/getPeople";
 import GetPlanets from "./views/getPlanets";
@@ -21,11 +22,11 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route path="/" element={<GetPeople />} />
+                        <Route path="/demo" element={<Demo />} />
                         <Route path="/people" element={<GetPeople />} />
                         <Route path="/planets" element={<GetPlanets />} />
                         <Route path="/vehicles" element={<GetVehicles />} />
-                        <Route path="/details/:type/:id" element={<Details />} /> {/* Aquí gestionamos los detalles */}
+                        <Route path="/details/:type/:id" element={<Details />} /> 
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
 

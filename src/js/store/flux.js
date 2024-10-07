@@ -16,19 +16,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
-			personDetails: {},   // Detalles de una persona específica
-            planetDetails: {},   // Detalles de un planeta específico
-            vehicleDetails: {}   // Detalles de un vehículo específico
+            favorites: [],
+			personDetails: {},   
+            planetDetails: {},   
+            vehicleDetails: {}   
 			
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
 			getPeople: async () => {
                 try {
-                    const response = await fetch(`https://www.swapi.tech/api/people`);
+                    const response = await fetch(`https://www.swapi.tech/api/people/`);
                     const data = await response.json();
                     setStore({ people: data.results });
                 } catch (error) {
@@ -56,7 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
-			 // Fetch details of a specific person
+			 
 			 getPersonDetails: async (id) => {
                 try {
                     const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
@@ -67,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
-            // Fetch details of a specific planet
+            
             getPlanetDetails: async (id) => {
                 try {
                     const response = await fetch(`https://www.swapi.tech/api/planets/${id}`);
@@ -78,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
-            // Fetch details of a specific vehicle
+            
             getVehicleDetails: async (id) => {
                 try {
                     const response = await fetch(`https://www.swapi.tech/api/vehicles/${id}`);
@@ -88,6 +89,20 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.error("Error fetching vehicle details:", error);
                 }
             },
+
+            addToFavorites: (item) => {
+                const store = getStore();
+                if (!store.favorites.find(fav => fav.uid === item.uid)) {
+                    setStore({ favorites: [...store.favorites, item] });
+                }
+            },
+
+            removeFromFavorites: (uid) => {
+                const store = getStore();
+                const updatedFavorites = store.favorites.filter(fav => fav.uid !== uid);
+                setStore({ favorites: updatedFavorites });
+            },
+        
 		
 			changeColor: (index, color) => {
 				//get the store

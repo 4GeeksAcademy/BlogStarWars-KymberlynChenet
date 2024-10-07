@@ -1,43 +1,61 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
+import "../../styles/demo.css";
 import { Link } from "react-router-dom";
 
-import { Context } from "../store/appContext";
-
-import "../../styles/demo.css";
-
 export const Demo = () => {
-	const { store, actions } = useContext(Context);
 
-	return (
-		<div className="container">
-			<ul className="list-group">
-				{store.demo.map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="list-group-item d-flex justify-content-between"
-							style={{ background: item.background }}>
-							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
-							</Link>
-							{// Conditional render example
-							// Check to see if the background is orange, if so, display the message
-							item.background === "orange" ? (
-								<p style={{ color: item.initial }}>
-									Check store/flux.js scroll to the actions to see the code
-								</p>
-							) : null}
-							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
-								Change Color
-							</button>
-						</li>
-					);
-				})}
-			</ul>
-			<br />
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
-		</div>
-	);
+	return ( <div className="Container"> 
+		<div id="carouselExampleIndicators" className="carousel slide">
+				<div className="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div className="carousel-inner">
+					<div className="carousel-item active">
+					<img src='https://images.hdqwalls.com/download/darth-vader-hallway-e9-3840x2400.jpg' className="d-block w-100" alt="..."/>
+					<div className="carousel-caption d-md-block">
+						<div className="boton">
+					 <Link to="/people">
+					   <button type="button" className="btn btn-outline-danger">CHARACTERS</button>
+					</Link> 
+						</div>
+						</div>
+					</div>
+					<div className="carousel-item">
+					<img src='https://wallpapercave.com/wp/wp8179249.jpg' className="d-block w-100" alt="..."/>
+					<div className="carousel-caption d-md-block">
+						<div className="boton">
+					 <Link to="/planets">
+					   <button type="button" className="btn btn-outline-info">PLANETS</button>
+					</Link> 
+						</div>
+						</div>
+					</div>
+					<div className="carousel-item">
+					<img src='https://img5.goodfon.com/wallpaper/nbig/1/63/zvezda-smerti-2-boevaia-stantsiia-shattl-t-4a-tipa-liambda-i.jpg' className="d-block w-100" alt="..."/>
+					<div className="carousel-caption d-md-block">
+						<div className="boton">
+					 <Link to="/vehicles">
+					   <button type="button" className="btn btn-outline-primary">VEHICLES</button>
+					</Link> 
+						</div>
+						</div>
+					</div>
+				</div>
+				<button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<span className="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span className="visually-hidden">Previous</span>
+				</button>
+				<button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<span className="carousel-control-next-icon" aria-hidden="true"></span>
+					<span className="visually-hidden">Next</span>
+				</button>
+				</div>
+
+
+</div>
+
+
+);
 };

@@ -1,0 +1,16 @@
+.Container {
+    background-color: black;
+    background-image: url("https://th.bing.com/th/id/OIP.wbJ0EbIonSeAWJEHgKfFuQHaHa?rs=1&pid=ImgDetMain");
+}
+.boton {
+margin-bottom: 500px;
+
+}
+
+.boton button {
+    padding: 30px 45px; 
+    font-size: 30px; 
+    border-width: 2px; 
+    font-family: 'Sixtyfour Convergence';
+}
+
