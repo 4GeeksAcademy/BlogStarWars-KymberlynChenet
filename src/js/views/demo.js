@@ -2,60 +2,42 @@ import React from "react";
 import "../../styles/demo.css";
 import { Link } from "react-router-dom";
 
-export const Demo = () => {
 
-	return ( <div className="Container"> 
-		<div id="carouselExampleIndicators" className="carousel slide">
-				<div className="carousel-indicators">
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+const Demo = () => {
+
+	return ( <div className="Container" style={{
+		backgroundImage: `url('https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif')`,
+		backgroundSize: "cover", 
+		backgroundPosition: "center",
+		backgroundRepeat: "repeat", 
+	}}>  
+				<div className="container text-center ">
+			<div className="row">
+				<div className="col mt-5">
+					<Link to="/people">
+					   <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462540486_1538090874254245_1373256494612479317_n.jpg?stp=dst-jpg_s403x403&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Rx5goauNoEMQ7kNvgE4zhIc&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_gid=AutgFeIVkKYR8d1mXNJLPUo&oh=03_Q7cD1QFjdJUAOvvaMViFbyTDyV9piWGgdTna24xHliHat7-W3Q&oe=672D2D58" className="img-thumbnail" alt="..."/>
+					</Link>
 				</div>
-				<div className="carousel-inner">
-					<div className="carousel-item active">
-					<img src='https://images.hdqwalls.com/download/darth-vader-hallway-e9-3840x2400.jpg' className="d-block w-100" alt="..."/>
-					<div className="carousel-caption d-md-block">
-						<div className="boton">
-					 <Link to="/people">
-					   <button type="button" className="btn btn-outline-danger">CHARACTERS</button>
-					</Link> 
-						</div>
-						</div>
-					</div>
-					<div className="carousel-item">
-					<img src='https://wallpapercave.com/wp/wp8179249.jpg' className="d-block w-100" alt="..."/>
-					<div className="carousel-caption d-md-block">
-						<div className="boton">
-					 <Link to="/planets">
-					   <button type="button" className="btn btn-outline-info">PLANETS</button>
-					</Link> 
-						</div>
-						</div>
-					</div>
-					<div className="carousel-item">
-					<img src='https://img5.goodfon.com/wallpaper/nbig/1/63/zvezda-smerti-2-boevaia-stantsiia-shattl-t-4a-tipa-liambda-i.jpg' className="d-block w-100" alt="..."/>
-					<div className="carousel-caption d-md-block">
-						<div className="boton">
-					 <Link to="/vehicles">
-					   <button type="button" className="btn btn-outline-primary">VEHICLES</button>
-					</Link> 
-						</div>
-						</div>
-					</div>
+				<div className="col  mt-5">
+					<Link to="/planets">
+                       <img src="https://scontent.fmad15-1.fna.fbcdn.net/v/t1.15752-9/462540918_1702205973895952_8597068637886813766_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9f807c&_nc_ohc=80wumYfjP74Q7kNvgE_u9DN&_nc_ht=scontent.fmad15-1.fna&_nc_gid=AZRd6qon9MFaw-BYnshuHtx&oh=03_Q7cD1QFWw64LC9GJ3vIGON6YtUh6lfDls__kYNgRmIrq3AKZhQ&oe=672D0D26" className="img-thumbnail" alt="..."/>
+				    </Link>
 				</div>
-				<button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-					<span className="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span className="visually-hidden">Previous</span>
-				</button>
-				<button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-					<span className="carousel-control-next-icon" aria-hidden="true"></span>
-					<span className="visually-hidden">Next</span>
-				</button>
+				<div className="col  mt-5">
+					<Link to="/vehicles">
+                      <img src="https://scontent.fmad15-1.fna.fbcdn.net/v/t1.15752-9/461646583_405842225707976_6039383370113596273_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_ohc=XzScsl5n72YQ7kNvgENC4_J&_nc_ht=scontent.fmad15-1.fna&_nc_gid=AmynbhB3Nk5jg0FmtBhX_N1&oh=03_Q7cD1QFgUGMvRZzbCR7Q_PeedYelbQoBkbn1vqYqKyjHqr9MgQ&oe=672D42B9" className="img-thumbnail" alt="..."/>
+                     </Link>
 				</div>
+			</div>
+			</div> 
+	     <div> 
+        </div>
 
 
 </div>
-
+     
 
 );
 };
+
+export default Demo

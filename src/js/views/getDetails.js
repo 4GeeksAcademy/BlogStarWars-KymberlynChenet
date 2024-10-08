@@ -39,7 +39,21 @@ const Details = () => {
     }
     
     if (!details || Object.keys(details).length === 0) {
-        return <div>Loading details...</div>; 
+        return <div className="loading"  style={{
+                    backgroundImage: 'url("https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif")',
+                    backgroundSize: "cover", 
+                    backgroundPosition: "center",
+                    padding: "20px"}}> 
+                    <div className="spinner-grow text-warning" role="status">
+                     <span className="visually-hidden">Loading...</span>
+                    </div>
+                    <div className="spinner-grow text-warning" role="status">
+                     <span className="visually-hidden">Loading...</span>
+                    </div>
+                    <div className="spinner-grow text-warning" role="status">
+                     <span className="visually-hidden">Loading...</span>
+                    </div>
+              </div>
     }
 
     return (      

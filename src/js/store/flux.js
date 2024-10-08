@@ -90,10 +90,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
-            addToFavorites: (item) => {
+            addToFavorites: (item, imageUrl) => {
+
                 const store = getStore();
                 if (!store.favorites.find(fav => fav.uid === item.uid)) {
-                    setStore({ favorites: [...store.favorites, item] });
+                    const newItem ={
+                        ...item,
+                        imageUrl
+                    }
+                    setStore({ favorites: [...store.favorites, newItem] });
                 }
             },
 

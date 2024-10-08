@@ -6,12 +6,13 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Demo } from "./views/demo";
+import Demo  from "./views/demo.js"; 
 
 import GetPeople from "./views/getPeople";
 import GetPlanets from "./views/getPlanets";
 import GetVehicles from "./views/getVehicles";
 import Details from "./views/getDetails";
+import Favorites from "./views/favorites";
 
 const Layout = () => {
     const basename = process.env.BASENAME || "";
@@ -26,7 +27,8 @@ const Layout = () => {
                         <Route path="/people" element={<GetPeople />} />
                         <Route path="/planets" element={<GetPlanets />} />
                         <Route path="/vehicles" element={<GetVehicles />} />
-                        <Route path="/details/:type/:id" element={<Details />} /> 
+                        <Route path="/details/:type/:id" element={<Details />} />
+                        <Route path="/favorites" element={<Favorites />} /> 
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
 

@@ -25,29 +25,20 @@ export const Navbar = () => {
 										<li className="nav-item">
 										<Link to="/vehicles"><button type="button" className="btn btn-outline-warning btn-lg m-3">VEHICLES</button></Link>
 										</li>
-
-
-
-
-
-
-										<ul className="dropdown-menu">
-											<li><a className="dropdown-item" href="#">Action</a></li>
-											<li><a className="dropdown-item" href="#">Another action</a></li>
-											<li><hr className="dropdown-divider"></hr></li>
-											<li><a className="dropdown-item" href="#">Something else here</a></li>
-										</ul>
-							
-						
-		
 									</ul>
-									<form className="d-flex" role="search">
-										<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-										<button className="btn btn-outline-success" type="submit">Search</button>
-									</form>
+									<Link to="/favorites">
+										<button type="button" className="btn btn-warning btn-lg m-3"> Favorites 
+										         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
+												 <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+												 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+												 </svg>
+									     </button>
+									</Link>
+									
 									</div>
 								</div>
-								</nav>
-		</div>
+					</nav>
+					
+					</div>
 	);
 };
